@@ -52,7 +52,7 @@ public:
          tea2->drawTeapot(0, -3, 0);
          tea3->drawTeapot(-3, 0, 0);
          cube1->drawCube(3, 3, 0, 1, 45);
-         cube2->drawCube(-3, 0, 0, 0, -45);
+         cube2->drawCube(-3, 0, 0, 0, -30);
 
       if (shader) shader->end();
       glutSwapBuffers();

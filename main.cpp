@@ -27,6 +27,8 @@ protected:
    float timer010;  // timer counting 0->1->0
    bool bUp;        // flag if counting up or down.
    Monja *Vietnamita;
+   Monja* patas;
+   Monja* brazos;
    triangle *tri1;
    cube *cube1;
    cube *cube2;
@@ -45,14 +47,32 @@ public:
       //timer010 = 0.09; //for screenshot!
       glPushMatrix();
       if (shader) shader->begin();
-         glTranslatef(0.0, 0.0, -10.0);
+         glTranslatef(3, -1, -10.0);
 
-         tri1->drawTriangle(0, 3, 0);
-         tea1->drawTeapot(3, 0, 0);
-         tea2->drawTeapot(0, -3, 0);
-         tea3->drawTeapot(-3, 0, 0);
-         cube1->drawCube(3, 3, 0, 1, 45);
-         cube2->drawCube(-3, 0, 0, 0, -30);
+         Vietnamita->DibujarMonja(8, 30, 0, 0, 0);
+         cube1->drawCube(-4, 0, 0, 1, -30);
+         glPushMatrix();
+            glTranslatef(-6.5, 2, 0);
+            glutSolidSphere(1.25, 20, 20);
+         glPopMatrix();
+         glPushMatrix();
+             glTranslatef(-7.75, 2, 0);
+             glutSolidSphere(0.5, 20, 20);
+         glPopMatrix();
+         glPushMatrix();
+             glTranslatef(-5.25, 2, 0);
+             glutSolidSphere(0.5, 20, 20);
+         glPopMatrix();
+         glPushMatrix();
+             glTranslatef(-6, 2, 1);
+             glutSolidSphere(0.25, 20, 20);
+             glTranslatef(-1, 0, 0);
+             glutSolidSphere(0.25, 20, 20);
+         glPopMatrix();
+         patas->DibujarMonja(1, 45, -1.5, -0.7, -0.75);
+         patas->DibujarMonja(1, 45, -1.5, -0.7, 0);
+         brazos->DibujarMonja(1, 45, -2.8, 0.2, 0);
+         brazos->DibujarMonja(1, 45, -2.8, 0.2, -0.75);
 
       if (shader) shader->end();
       glutSwapBuffers();

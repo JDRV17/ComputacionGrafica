@@ -10,7 +10,7 @@ class Monja
 {
 public:
 	Monja() {};
-	void DibujarMonja(float x, float y, float z);
+	void DibujarMonja(int seg, float alpha, float x, float y, float z);
 
 };
 
